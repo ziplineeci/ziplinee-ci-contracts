@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	manifest "github.com/estafette/estafette-ci-manifest"
+	manifest "github.com/ziplineeci/ziplinee-ci-manifest"
 )
 
 // ContainerRepositoryCredentialConfig is used to authenticate for (private) container repositories (will be replaced by CredentialConfig eventually)

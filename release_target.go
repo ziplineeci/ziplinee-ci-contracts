@@ -1,8 +1,6 @@
 package contracts
 
-import (
-	"github.com/estafette/estafette-ci-manifest"
-)
+import manifest "github.com/ziplineeci/ziplinee-ci-manifest"
 
 // ReleaseTarget contains the information to visualize and trigger release
 type ReleaseTarget struct {

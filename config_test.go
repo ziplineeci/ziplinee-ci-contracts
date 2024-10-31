@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	manifest "github.com/estafette/estafette-ci-manifest"
 	"github.com/stretchr/testify/assert"
+	manifest "github.com/ziplineeci/ziplinee-ci-manifest"
 	yaml "gopkg.in/yaml.v2"
 )
 

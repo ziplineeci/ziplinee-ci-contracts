@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	manifest "github.com/estafette/estafette-ci-manifest"
+	manifest "github.com/ziplineeci/ziplinee-ci-manifest"
 )
 
 // Pipeline represents a pipeline with the latest build info, including version number, repo, branch, revision, labels and manifest

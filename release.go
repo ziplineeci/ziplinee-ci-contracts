@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	manifest "github.com/estafette/estafette-ci-manifest"
+	manifest "github.com/ziplineeci/ziplinee-ci-manifest"
 )
 
 // Release represents a release of a pipeline
