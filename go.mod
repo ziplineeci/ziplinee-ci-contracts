@@ -4,7 +4,7 @@ go 1.22.2
 
 require (
 	github.com/stretchr/testify v1.9.0
-	github.com/ziplineeci/ziplinee-ci-manifest v0.0.1
+	github.com/ziplineeci/ziplinee-ci-manifest v0.0.2
 	gopkg.in/yaml.v2 v2.4.0
 )
 

@@ -15,20 +15,20 @@ func TestBuild(t *testing.T) {
 		build := Build{
 			ID:           "3",
 			RepoSource:   "github.com",
-			RepoOwner:    "estafette",
-			RepoName:     "estafette-ci-api",
-			RepoBranch:   "master",
+			RepoOwner:    "ziplineeci",
+			RepoName:     "ziplinee-ci-api",
+			RepoBranch:   "main",
 			RepoRevision: "as23456",
 			BuildVersion: "1.0.0",
 			BuildStatus:  StatusSucceeded,
 			Labels: []Label{
 				Label{
 					Key:   "app",
-					Value: "estafette-ci-api",
+					Value: "ziplinee-ci-api",
 				},
 				Label{
 					Key:   "team",
-					Value: "estafette-team",
+					Value: "ziplinee-team",
 				},
 				Label{
 					Key:   "language",
@@ -54,7 +54,7 @@ func TestBuild(t *testing.T) {
 		bytes, err := json.Marshal(&build)
 
 		assert.Nil(t, err)
-		assert.Equal(t, "{\"id\":\"3\",\"repoSource\":\"github.com\",\"repoOwner\":\"estafette\",\"repoName\":\"estafette-ci-api\",\"repoBranch\":\"master\",\"repoRevision\":\"as23456\",\"buildVersion\":\"1.0.0\",\"buildStatus\":\"succeeded\",\"labels\":[{\"key\":\"app\",\"value\":\"estafette-ci-api\"},{\"key\":\"team\",\"value\":\"estafette-team\"},{\"key\":\"language\",\"value\":\"golang\"}],\"commits\":[{\"message\":\"First commit\",\"author\":{\"email\":\"name@server.com\",\"name\":\"Name\",\"username\":\"MyName\"}}],\"insertedAt\":\"2018-04-17T08:03:00Z\",\"updatedAt\":\"2018-04-17T08:15:00Z\",\"duration\":0}", string(bytes))
+		assert.Equal(t, "{\"id\":\"3\",\"repoSource\":\"github.com\",\"repoOwner\":\"ziplineeci\",\"repoName\":\"ziplinee-ci-api\",\"repoBranch\":\"main\",\"repoRevision\":\"as23456\",\"buildVersion\":\"1.0.0\",\"buildStatus\":\"succeeded\",\"labels\":[{\"key\":\"app\",\"value\":\"ziplinee-ci-api\"},{\"key\":\"team\",\"value\":\"ziplinee-team\"},{\"key\":\"language\",\"value\":\"golang\"}],\"commits\":[{\"message\":\"First commit\",\"author\":{\"email\":\"name@server.com\",\"name\":\"Name\",\"username\":\"MyName\"}}],\"insertedAt\":\"2018-04-17T08:03:00Z\",\"updatedAt\":\"2018-04-17T08:15:00Z\",\"duration\":0}", string(bytes))
 	})
 
 	t.Run("JSONMarshalPayloadArrayOfBuilds", func(t *testing.T) {
@@ -64,20 +64,20 @@ func TestBuild(t *testing.T) {
 		builds = append(builds, &Build{
 			ID:           "3",
 			RepoSource:   "github.com",
-			RepoOwner:    "estafette",
-			RepoName:     "estafette-ci-api",
-			RepoBranch:   "master",
+			RepoOwner:    "ziplineeci",
+			RepoName:     "ziplinee-ci-api",
+			RepoBranch:   "main",
 			RepoRevision: "as23456",
 			BuildVersion: "1.0.0",
 			BuildStatus:  StatusSucceeded,
 			Labels: []Label{
 				Label{
 					Key:   "app",
-					Value: "estafette-ci-api",
+					Value: "ziplinee-ci-api",
 				},
 				Label{
 					Key:   "team",
-					Value: "estafette-team",
+					Value: "ziplinee-team",
 				},
 				Label{
 					Key:   "language",
@@ -101,20 +101,20 @@ func TestBuild(t *testing.T) {
 		builds = append(builds, &Build{
 			ID:           "8",
 			RepoSource:   "github.com",
-			RepoOwner:    "estafette",
-			RepoName:     "estafette-ci-api",
-			RepoBranch:   "master",
+			RepoOwner:    "ziplineeci",
+			RepoName:     "ziplinee-ci-api",
+			RepoBranch:   "main",
 			RepoRevision: "as23456",
 			BuildVersion: "1.0.0",
 			BuildStatus:  StatusSucceeded,
 			Labels: []Label{
 				Label{
 					Key:   "app",
-					Value: "estafette-ci-api",
+					Value: "ziplinee-ci-api",
 				},
 				Label{
 					Key:   "team",
-					Value: "estafette-team",
+					Value: "ziplinee-team",
 				},
 				Label{
 					Key:   "language",
@@ -140,6 +140,6 @@ func TestBuild(t *testing.T) {
 		bytes, err := json.Marshal(&builds)
 
 		assert.Nil(t, err)
-		assert.Equal(t, "[{\"id\":\"3\",\"repoSource\":\"github.com\",\"repoOwner\":\"estafette\",\"repoName\":\"estafette-ci-api\",\"repoBranch\":\"master\",\"repoRevision\":\"as23456\",\"buildVersion\":\"1.0.0\",\"buildStatus\":\"succeeded\",\"labels\":[{\"key\":\"app\",\"value\":\"estafette-ci-api\"},{\"key\":\"team\",\"value\":\"estafette-team\"},{\"key\":\"language\",\"value\":\"golang\"}],\"commits\":[{\"message\":\"First commit\",\"author\":{\"email\":\"name@server.com\",\"name\":\"Name\",\"username\":\"MyName\"}}],\"insertedAt\":\"2018-04-17T08:03:00Z\",\"updatedAt\":\"2018-04-17T08:15:00Z\",\"duration\":0},{\"id\":\"8\",\"repoSource\":\"github.com\",\"repoOwner\":\"estafette\",\"repoName\":\"estafette-ci-api\",\"repoBranch\":\"master\",\"repoRevision\":\"as23456\",\"buildVersion\":\"1.0.0\",\"buildStatus\":\"succeeded\",\"labels\":[{\"key\":\"app\",\"value\":\"estafette-ci-api\"},{\"key\":\"team\",\"value\":\"estafette-team\"},{\"key\":\"language\",\"value\":\"golang\"}],\"commits\":[{\"message\":\"Second commit\",\"author\":{\"email\":\"othername@server.com\",\"name\":\"Other Name\",\"username\":\"OtherName\"}}],\"insertedAt\":\"2018-04-17T08:03:00Z\",\"updatedAt\":\"2018-04-17T08:15:00Z\",\"duration\":0}]", string(bytes))
+		assert.Equal(t, "[{\"id\":\"3\",\"repoSource\":\"github.com\",\"repoOwner\":\"ziplineeci\",\"repoName\":\"ziplinee-ci-api\",\"repoBranch\":\"main\",\"repoRevision\":\"as23456\",\"buildVersion\":\"1.0.0\",\"buildStatus\":\"succeeded\",\"labels\":[{\"key\":\"app\",\"value\":\"ziplinee-ci-api\"},{\"key\":\"team\",\"value\":\"ziplinee-team\"},{\"key\":\"language\",\"value\":\"golang\"}],\"commits\":[{\"message\":\"First commit\",\"author\":{\"email\":\"name@server.com\",\"name\":\"Name\",\"username\":\"MyName\"}}],\"insertedAt\":\"2018-04-17T08:03:00Z\",\"updatedAt\":\"2018-04-17T08:15:00Z\",\"duration\":0},{\"id\":\"8\",\"repoSource\":\"github.com\",\"repoOwner\":\"ziplineeci\",\"repoName\":\"ziplinee-ci-api\",\"repoBranch\":\"main\",\"repoRevision\":\"as23456\",\"buildVersion\":\"1.0.0\",\"buildStatus\":\"succeeded\",\"labels\":[{\"key\":\"app\",\"value\":\"ziplinee-ci-api\"},{\"key\":\"team\",\"value\":\"ziplinee-team\"},{\"key\":\"language\",\"value\":\"golang\"}],\"commits\":[{\"message\":\"Second commit\",\"author\":{\"email\":\"othername@server.com\",\"name\":\"Other Name\",\"username\":\"OtherName\"}}],\"insertedAt\":\"2018-04-17T08:03:00Z\",\"updatedAt\":\"2018-04-17T08:15:00Z\",\"duration\":0}]", string(bytes))
 	})
 }

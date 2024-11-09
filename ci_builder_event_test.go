@@ -106,11 +106,11 @@ func TestValidateCiBuilderEvent(t *testing.T) {
 	})
 }
 
-func getCiBuilderEvent() EstafetteCiBuilderEvent {
-	return EstafetteCiBuilderEvent{
+func getCiBuilderEvent() ZiplineeCiBuilderEvent {
+	return ZiplineeCiBuilderEvent{
 		JobType: JobTypeBot,
-		JobName: "build-estafette-ci-api-12345",
-		PodName: "build-estafette-ci-api-12345-abcd",
+		JobName: "build-ziplinee-ci-api-12345",
+		PodName: "build-ziplinee-ci-api-12345-abcd",
 		Git:     &GitConfig{},
 		Build:   &Build{},
 		Release: &Release{},

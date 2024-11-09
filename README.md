@@ -1,20 +1,20 @@
-# Estafette CI
+# Ziplinee CI
 
-The `estafette-ci-contracts` library is part of the Estafette CI system documented at https://estafette.io.
+The `ziplinee-ci-contracts` library is part of the Ziplinee CI system documented at https://ziplinee.io.
 
-Please file any issues related to Estafette CI at https://github.com/estafette/estafette-ci-central/issues
+Please file any issues related to Ziplinee CI at https://github.com/ziplineeci/ziplinee-ci-central/issues
 
-## Estafette-ci-contracts
+## Ziplinee-ci-contracts
 
-This library has contracts for requests / responses between various components of the Estafette CI system.
+This library has contracts for requests / responses between various components of the Ziplinee CI system.
 
 ## Development
 
 To start development run
 
 ```bash
-git clone git@github.com:estafette/estafette-ci-contracts.git
-cd estafette-ci-contracts
+git clone git@github.com:ziplineeci/ziplinee-ci-contracts.git
+cd ziplinee-ci-contracts
 ```
 
 Before committing your changes run

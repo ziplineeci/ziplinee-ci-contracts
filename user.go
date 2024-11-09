@@ -2,7 +2,7 @@ package contracts
 
 import "time"
 
-// User represents a user of Estafette
+// User represents a user of Ziplinee
 type User struct {
 	ID                  string                 `json:"id,omitempty"`
 	Active              bool                   `json:"active,omitempty"`

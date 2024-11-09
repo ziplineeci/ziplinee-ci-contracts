@@ -20,24 +20,24 @@ credentials:
   repository: extensions
   username: username
   password: secret
-- name: container-registry-estafette
+- name: container-registry-ziplinee
   type: container-registry
-  repository: estafette
+  repository: ziplinee
   username: username
   password: secret
-- name: gke-estafette-production
+- name: gke-ziplinee-production
   type: kubernetes-engine
-  project: estafette-production
+  project: ziplinee-production
   region: europe-west2
   cluster: production-europe-west2
-  defaultNamespace: estafette
+  defaultNamespace: ziplinee
   serviceAccountKeyfile: '{}'
-- name: gke-estafette-development
+- name: gke-ziplinee-development
   type: kubernetes-engine
-  project: estafette-development
+  project: ziplinee-development
   cluster: development-europe-west2
   region: europe-west2
-  defaultNamespace: estafette
+  defaultNamespace: ziplinee
   serviceAccountKeyfile: '{}'
 - name: bitbucket-api-token
   type: bitbucket-api-token
@@ -73,5 +73,5 @@ trustedImages:
   injectedCredentialTypes:
   - bitbucket-api-token
   - github-api-token
-- path: estafette/estafette-ci-builder
+- path: ziplineeci/ziplinee-ci-builder
   runPrivileged: true

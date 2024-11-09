@@ -67,10 +67,10 @@ func TestUnmarshalBuilderConfigFromYaml(t *testing.T) {
 		assert.Equal(t, "username", config.Credentials[0].AdditionalProperties["username"])
 		assert.Equal(t, "secret", config.Credentials[0].AdditionalProperties["password"])
 
-		assert.Equal(t, "estafette-production", config.Credentials[2].AdditionalProperties["project"])
+		assert.Equal(t, "ziplinee-production", config.Credentials[2].AdditionalProperties["project"])
 		assert.Equal(t, "europe-west2", config.Credentials[2].AdditionalProperties["region"])
 		assert.Equal(t, "production-europe-west2", config.Credentials[2].AdditionalProperties["cluster"])
-		assert.Equal(t, "estafette", config.Credentials[2].AdditionalProperties["defaultNamespace"])
+		assert.Equal(t, "ziplinee", config.Credentials[2].AdditionalProperties["defaultNamespace"])
 		assert.Equal(t, "{}", config.Credentials[2].AdditionalProperties["serviceAccountKeyfile"])
 	})
 
@@ -196,10 +196,10 @@ func TestUnmarshalBuilderConfigFromJson(t *testing.T) {
 		assert.Equal(t, "username", config.Credentials[0].AdditionalProperties["username"])
 		assert.Equal(t, "secret", config.Credentials[0].AdditionalProperties["password"])
 
-		assert.Equal(t, "estafette-production", config.Credentials[2].AdditionalProperties["project"])
+		assert.Equal(t, "ziplinee-production", config.Credentials[2].AdditionalProperties["project"])
 		assert.Equal(t, "europe-west2", config.Credentials[2].AdditionalProperties["region"])
 		assert.Equal(t, "production-europe-west2", config.Credentials[2].AdditionalProperties["cluster"])
-		assert.Equal(t, "estafette", config.Credentials[2].AdditionalProperties["defaultNamespace"])
+		assert.Equal(t, "ziplinee", config.Credentials[2].AdditionalProperties["defaultNamespace"])
 		assert.Equal(t, "{}", config.Credentials[2].AdditionalProperties["serviceAccountKeyfile"])
 	})
 
@@ -271,8 +271,8 @@ func TestUnmarshalBuilderConfigFromJson(t *testing.T) {
 		_ = json.Unmarshal(bytes, &config)
 
 		assert.Equal(t, "github.com", config.Git.RepoSource)
-		assert.Equal(t, "estafette", config.Git.RepoOwner)
-		assert.Equal(t, "estafette-ci-contracts", config.Git.RepoName)
+		assert.Equal(t, "ziplineeci", config.Git.RepoOwner)
+		assert.Equal(t, "ziplinee-ci-contracts", config.Git.RepoName)
 		assert.Equal(t, "master", config.Git.RepoBranch)
 		assert.Equal(t, "3adf11c158811dbf0b94ca5bdbbdae79fffe7852", config.Git.RepoRevision)
 	})
@@ -343,7 +343,7 @@ func TestMarshalBuilderConfigToJson(t *testing.T) {
 			return
 		}
 
-		assert.Equal(t, "{\"manifestPreferences\":{\"labelRegexes\":{\"type\":\"api|web|library|container\"},\"builderOperatingSystems\":[\"linux\",\"windows\"],\"builderTracksPerOperatingSystem\":{\"linux\":[\"stable\",\"beta\",\"dev\"],\"windows\":[\"windowsservercore-1809\",\"windowsservercore-1909\",\"windowsservercore-ltsc2019\"]}},\"credentials\":[{\"name\":\"container-registry-extensions\",\"type\":\"container-registry\",\"additionalProperties\":{\"password\":\"secret\",\"repository\":\"extensions\",\"username\":\"username\"}},{\"name\":\"container-registry-estafette\",\"type\":\"container-registry\",\"additionalProperties\":{\"password\":\"secret\",\"repository\":\"estafette\",\"username\":\"username\"}},{\"name\":\"gke-estafette-production\",\"type\":\"kubernetes-engine\",\"additionalProperties\":{\"cluster\":\"production-europe-west2\",\"defaultNamespace\":\"estafette\",\"project\":\"estafette-production\",\"region\":\"europe-west2\",\"serviceAccountKeyfile\":\"{}\"}},{\"name\":\"gke-estafette-development\",\"type\":\"kubernetes-engine\",\"additionalProperties\":{\"cluster\":\"development-europe-west2\",\"defaultNamespace\":\"estafette\",\"project\":\"estafette-development\",\"region\":\"europe-west2\",\"serviceAccountKeyfile\":\"{}\"}},{\"name\":\"bitbucket-api-token\",\"type\":\"bitbucket-api-token\",\"additionalProperties\":{\"token\":\"sometoken\"}},{\"name\":\"github-api-token\",\"type\":\"github-api-token\",\"additionalProperties\":{\"token\":\"sometoken\"}},{\"name\":\"slack-webhook\",\"type\":\"slack-webhook\",\"additionalProperties\":{\"webhook\":\"somewebhookurl\"}}],\"trustedImages\":[{\"path\":\"extensions/docker\",\"runPrivileged\":false,\"runDocker\":true,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"container-registry\"]},{\"path\":\"extensions/gke\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"kubernetes-engine\"]},{\"path\":\"extensions/bitbucket-status\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"bitbucket-api-token\"]},{\"path\":\"extensions/github-status\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"github-api-token\"]},{\"path\":\"extensions/slack-build-status\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"slack-webhook\"]},{\"path\":\"docker\",\"runPrivileged\":false,\"runDocker\":true,\"allowCommands\":false,\"allowNotifications\":false},{\"path\":\"multiple-git-sources-test\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":true,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"bitbucket-api-token\",\"github-api-token\"]},{\"path\":\"estafette/estafette-ci-builder\",\"runPrivileged\":true,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false}]}", string(jsonBytes))
+		assert.Equal(t, "{\"manifestPreferences\":{\"labelRegexes\":{\"type\":\"api|web|library|container\"},\"builderOperatingSystems\":[\"linux\",\"windows\"],\"builderTracksPerOperatingSystem\":{\"linux\":[\"stable\",\"beta\",\"dev\"],\"windows\":[\"windowsservercore-1809\",\"windowsservercore-1909\",\"windowsservercore-ltsc2019\"]}},\"credentials\":[{\"name\":\"container-registry-extensions\",\"type\":\"container-registry\",\"additionalProperties\":{\"password\":\"secret\",\"repository\":\"extensions\",\"username\":\"username\"}},{\"name\":\"container-registry-ziplinee\",\"type\":\"container-registry\",\"additionalProperties\":{\"password\":\"secret\",\"repository\":\"ziplinee\",\"username\":\"username\"}},{\"name\":\"gke-ziplinee-production\",\"type\":\"kubernetes-engine\",\"additionalProperties\":{\"cluster\":\"production-europe-west2\",\"defaultNamespace\":\"ziplinee\",\"project\":\"ziplinee-production\",\"region\":\"europe-west2\",\"serviceAccountKeyfile\":\"{}\"}},{\"name\":\"gke-ziplinee-development\",\"type\":\"kubernetes-engine\",\"additionalProperties\":{\"cluster\":\"development-europe-west2\",\"defaultNamespace\":\"ziplinee\",\"project\":\"ziplinee-development\",\"region\":\"europe-west2\",\"serviceAccountKeyfile\":\"{}\"}},{\"name\":\"bitbucket-api-token\",\"type\":\"bitbucket-api-token\",\"additionalProperties\":{\"token\":\"sometoken\"}},{\"name\":\"github-api-token\",\"type\":\"github-api-token\",\"additionalProperties\":{\"token\":\"sometoken\"}},{\"name\":\"slack-webhook\",\"type\":\"slack-webhook\",\"additionalProperties\":{\"webhook\":\"somewebhookurl\"}}],\"trustedImages\":[{\"path\":\"extensions/docker\",\"runPrivileged\":false,\"runDocker\":true,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"container-registry\"]},{\"path\":\"extensions/gke\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"kubernetes-engine\"]},{\"path\":\"extensions/bitbucket-status\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"bitbucket-api-token\"]},{\"path\":\"extensions/github-status\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"github-api-token\"]},{\"path\":\"extensions/slack-build-status\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"slack-webhook\"]},{\"path\":\"docker\",\"runPrivileged\":false,\"runDocker\":true,\"allowCommands\":false,\"allowNotifications\":false},{\"path\":\"multiple-git-sources-test\",\"runPrivileged\":false,\"runDocker\":false,\"allowCommands\":true,\"allowNotifications\":false,\"injectedCredentialTypes\":[\"bitbucket-api-token\",\"github-api-token\"]},{\"path\":\"ziplineeci/ziplinee-ci-builder\",\"runPrivileged\":true,\"runDocker\":false,\"allowCommands\":false,\"allowNotifications\":false}]}", string(jsonBytes))
 	})
 }
 
@@ -393,7 +393,7 @@ func TestGetCredentialsByType(t *testing.T) {
 		if assert.Equal(t, 2, len(credentials)) {
 			assert.Equal(t, "container-registry-extensions", credentials[0].Name)
 			assert.Equal(t, "container-registry", credentials[0].Type)
-			assert.Equal(t, "container-registry-estafette", credentials[1].Name)
+			assert.Equal(t, "container-registry-ziplinee", credentials[1].Name)
 			assert.Equal(t, "container-registry", credentials[1].Type)
 		}
 	})
@@ -427,7 +427,7 @@ func TestGetCredentialsForTrustedImage(t *testing.T) {
 			if assert.Equal(t, 2, len(credentialMap["container-registry"])) {
 				assert.Equal(t, "container-registry-extensions", credentialMap["container-registry"][0].Name)
 				assert.Equal(t, "container-registry", credentialMap["container-registry"][0].Type)
-				assert.Equal(t, "container-registry-estafette", credentialMap["container-registry"][1].Name)
+				assert.Equal(t, "container-registry-ziplinee", credentialMap["container-registry"][1].Name)
 				assert.Equal(t, "container-registry", credentialMap["container-registry"][1].Type)
 			}
 		}
@@ -509,10 +509,10 @@ func TestFilterTrustedImages(t *testing.T) {
 				ImagePath: "extensions/docker",
 			},
 		}
-		stages := []*manifest.EstafetteStage{}
+		stages := []*manifest.ZiplineeStage{}
 
 		// act
-		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/estafette/estafette-ci-contracts")
+		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/ziplineeci/ziplinee-ci-contracts")
 
 		assert.Equal(t, 0, len(filteredTrustedImages))
 	})
@@ -527,14 +527,14 @@ func TestFilterTrustedImages(t *testing.T) {
 				ImagePath: "extensions/docker",
 			},
 		}
-		stages := []*manifest.EstafetteStage{
-			&manifest.EstafetteStage{
+		stages := []*manifest.ZiplineeStage{
+			&manifest.ZiplineeStage{
 				ContainerImage: "extensions/gke:stable",
 			},
 		}
 
 		// act
-		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/estafette/estafette-ci-contracts")
+		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/ziplineeci/ziplinee-ci-contracts")
 
 		if assert.Equal(t, 1, len(filteredTrustedImages)) {
 			assert.Equal(t, "extensions/gke", filteredTrustedImages[0].ImagePath)
@@ -551,10 +551,10 @@ func TestFilterTrustedImages(t *testing.T) {
 				ImagePath: "extensions/docker",
 			},
 		}
-		stages := []*manifest.EstafetteStage{
-			&manifest.EstafetteStage{
-				ParallelStages: []*manifest.EstafetteStage{
-					&manifest.EstafetteStage{
+		stages := []*manifest.ZiplineeStage{
+			&manifest.ZiplineeStage{
+				ParallelStages: []*manifest.ZiplineeStage{
+					&manifest.ZiplineeStage{
 						ContainerImage: "extensions/gke:stable",
 					},
 				},
@@ -562,7 +562,7 @@ func TestFilterTrustedImages(t *testing.T) {
 		}
 
 		// act
-		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/estafette/estafette-ci-contracts")
+		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/ziplineeci/ziplinee-ci-contracts")
 
 		if assert.Equal(t, 1, len(filteredTrustedImages)) {
 			assert.Equal(t, "extensions/gke", filteredTrustedImages[0].ImagePath)
@@ -582,10 +582,10 @@ func TestFilterTrustedImages(t *testing.T) {
 				ImagePath: "bsycorp/kind",
 			},
 		}
-		stages := []*manifest.EstafetteStage{
-			&manifest.EstafetteStage{
-				Services: []*manifest.EstafetteService{
-					&manifest.EstafetteService{
+		stages := []*manifest.ZiplineeStage{
+			&manifest.ZiplineeStage{
+				Services: []*manifest.ZiplineeService{
+					&manifest.ZiplineeService{
 						ContainerImage: "bsycorp/kind:latest-1.15",
 					},
 				},
@@ -593,7 +593,7 @@ func TestFilterTrustedImages(t *testing.T) {
 		}
 
 		// act
-		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/estafette/estafette-ci-contracts")
+		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/ziplineeci/ziplinee-ci-contracts")
 
 		if assert.Equal(t, 1, len(filteredTrustedImages)) {
 			assert.Equal(t, "bsycorp/kind", filteredTrustedImages[0].ImagePath)
@@ -610,17 +610,17 @@ func TestFilterTrustedImages(t *testing.T) {
 				ImagePath: "extensions/docker",
 			},
 		}
-		stages := []*manifest.EstafetteStage{
-			&manifest.EstafetteStage{
+		stages := []*manifest.ZiplineeStage{
+			&manifest.ZiplineeStage{
 				ContainerImage: "extensions/gke:stable",
 			},
-			&manifest.EstafetteStage{
+			&manifest.ZiplineeStage{
 				ContainerImage: "extensions/gke:stable",
 			},
 		}
 
 		// act
-		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/estafette/estafette-ci-contracts")
+		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/ziplineeci/ziplinee-ci-contracts")
 
 		if assert.Equal(t, 1, len(filteredTrustedImages)) {
 			assert.Equal(t, "extensions/gke", filteredTrustedImages[0].ImagePath)
@@ -637,16 +637,16 @@ func TestFilterTrustedImages(t *testing.T) {
 				ImagePath: "extensions/docker",
 			},
 		}
-		stages := []*manifest.EstafetteStage{
-			&manifest.EstafetteStage{
+		stages := []*manifest.ZiplineeStage{
+			&manifest.ZiplineeStage{
 				ContainerImage: "extensions/gke:stable",
 			},
-			&manifest.EstafetteStage{
+			&manifest.ZiplineeStage{
 				ContainerImage: "extensions/gke:stable",
 			},
-			&manifest.EstafetteStage{
-				ParallelStages: []*manifest.EstafetteStage{
-					&manifest.EstafetteStage{
+			&manifest.ZiplineeStage{
+				ParallelStages: []*manifest.ZiplineeStage{
+					&manifest.ZiplineeStage{
 						ContainerImage: "extensions/gke:stable",
 					},
 				},
@@ -654,7 +654,7 @@ func TestFilterTrustedImages(t *testing.T) {
 		}
 
 		// act
-		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/estafette/estafette-ci-contracts")
+		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/ziplineeci/ziplinee-ci-contracts")
 
 		if assert.Equal(t, 1, len(filteredTrustedImages)) {
 			assert.Equal(t, "extensions/gke", filteredTrustedImages[0].ImagePath)
@@ -666,24 +666,24 @@ func TestFilterTrustedImages(t *testing.T) {
 		trustedImages := []*TrustedImageConfig{
 			&TrustedImageConfig{
 				ImagePath:        "extensions/gke",
-				AllowedPipelines: "github.com/estafette/estafette-ci-contracts",
+				AllowedPipelines: "github.com/ziplineeci/ziplinee-ci-contracts",
 			},
 			&TrustedImageConfig{
 				ImagePath:        "extensions/docker",
-				AllowedPipelines: "github.com/estafette/estafette-ci-api",
+				AllowedPipelines: "github.com/ziplineeci/ziplinee-ci-api",
 			},
 		}
-		stages := []*manifest.EstafetteStage{
-			&manifest.EstafetteStage{
+		stages := []*manifest.ZiplineeStage{
+			&manifest.ZiplineeStage{
 				ContainerImage: "extensions/gke:stable",
 			},
-			&manifest.EstafetteStage{
+			&manifest.ZiplineeStage{
 				ContainerImage: "extensions/docker:stable",
 			},
 		}
 
 		// act
-		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/estafette/estafette-ci-contracts")
+		filteredTrustedImages := FilterTrustedImages(trustedImages, stages, "github.com/ziplineeci/ziplinee-ci-contracts")
 
 		if assert.Equal(t, 1, len(filteredTrustedImages)) {
 			assert.Equal(t, "extensions/gke", filteredTrustedImages[0].ImagePath)
@@ -708,7 +708,7 @@ func TestFilterCredentials(t *testing.T) {
 		trustedImages := []*TrustedImageConfig{}
 
 		// act
-		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/estafette/estafette-ci-contracts", "master")
+		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/ziplineeci/ziplinee-ci-contracts", "master")
 
 		assert.Equal(t, 0, len(filteredCredentials))
 	})
@@ -737,7 +737,7 @@ func TestFilterCredentials(t *testing.T) {
 		}
 
 		// act
-		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/estafette/estafette-ci-contracts", "master")
+		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/ziplineeci/ziplinee-ci-contracts", "master")
 
 		assert.Equal(t, 0, len(filteredCredentials))
 	})
@@ -776,7 +776,7 @@ func TestFilterCredentials(t *testing.T) {
 		}
 
 		// act
-		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/estafette/estafette-ci-contracts", "master")
+		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/ziplineeci/ziplinee-ci-contracts", "master")
 
 		assert.Equal(t, 2, len(filteredCredentials))
 		assert.Equal(t, "gke-a", filteredCredentials[0].Name)
@@ -821,7 +821,7 @@ func TestFilterCredentials(t *testing.T) {
 		}
 
 		// act
-		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/estafette/estafette-ci-contracts", "master")
+		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/ziplineeci/ziplinee-ci-contracts", "master")
 
 		assert.Equal(t, 2, len(filteredCredentials))
 		assert.Equal(t, "gke-a", filteredCredentials[0].Name)
@@ -866,7 +866,7 @@ func TestFilterCredentials(t *testing.T) {
 		}
 
 		// act
-		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/estafette/estafette-ci-contracts", "master")
+		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/ziplineeci/ziplinee-ci-contracts", "master")
 
 		assert.Equal(t, 1, len(filteredCredentials))
 		assert.Equal(t, "gke-a", filteredCredentials[0].Name)
@@ -879,12 +879,12 @@ func TestFilterCredentials(t *testing.T) {
 			&CredentialConfig{
 				Name:             "gke-a",
 				Type:             "kubernetes-engine",
-				AllowedPipelines: "github.com/estafette/estafette-ci-api",
+				AllowedPipelines: "github.com/ziplineeci/ziplinee-ci-api",
 			},
 			&CredentialConfig{
 				Name:             "gke-b",
 				Type:             "kubernetes-engine",
-				AllowedPipelines: "github.com/estafette/estafette-ci-contracts",
+				AllowedPipelines: "github.com/ziplineeci/ziplinee-ci-contracts",
 			},
 			&CredentialConfig{
 				Name: "docker-hub",
@@ -909,7 +909,7 @@ func TestFilterCredentials(t *testing.T) {
 		}
 
 		// act
-		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/estafette/estafette-ci-contracts", "master")
+		filteredCredentials := FilterCredentials(credentials, trustedImages, "github.com/ziplineeci/ziplinee-ci-contracts", "master")
 
 		assert.Equal(t, 1, len(filteredCredentials))
 		assert.Equal(t, "gke-b", filteredCredentials[0].Name)
@@ -1042,7 +1042,7 @@ func TestValidate(t *testing.T) {
 	t.Run("ReturnsNoErrorWhenManifestIsSet", func(t *testing.T) {
 
 		config := getBuilderConfig()
-		config.Manifest = &manifest.EstafetteManifest{}
+		config.Manifest = &manifest.ZiplineeManifest{}
 
 		// act
 		err := config.Validate()
@@ -1076,7 +1076,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 				 "bip":"192.168.1.1/24",
 				 "networks":[
 						{
-							 "name":"estafette",
+							 "name":"ziplinee",
 							 "driver":"default",
 							 "subnet":"192.168.2.1/24",
 							 "gateway":"192.168.2.1",
@@ -1109,7 +1109,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 										 "Name":"git-clone",
 										 "ContainerImage":"extensions/git-clone:stable",
 										 "Shell":"/bin/sh",
-										 "WorkingDirectory":"/estafette-work",
+										 "WorkingDirectory":"/ziplinee-work",
 										 "Commands":null,
 										 "RunCommandsInForeground":false,
 										 "When":"status == 'succeeded'",
@@ -1124,7 +1124,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 										 "Name":"set-pending-build-status",
 										 "ContainerImage":"extensions/bitbucket-status:stable",
 										 "Shell":"/bin/sh",
-										 "WorkingDirectory":"/estafette-work",
+										 "WorkingDirectory":"/ziplinee-work",
 										 "Commands":null,
 										 "RunCommandsInForeground":false,
 										 "When":"status == 'succeeded'",
@@ -1141,7 +1141,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 										 "Name":"envvars",
 										 "ContainerImage":"extensions/envvars:stable",
 										 "Shell":"/bin/sh",
-										 "WorkingDirectory":"/estafette-work",
+										 "WorkingDirectory":"/ziplinee-work",
 										 "Commands":null,
 										 "RunCommandsInForeground":false,
 										 "When":"status == 'succeeded'",
@@ -1174,7 +1174,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 										 "Name":"set-build-status",
 										 "ContainerImage":"extensions/bitbucket-status:stable",
 										 "Shell":"/bin/sh",
-										 "WorkingDirectory":"/estafette-work",
+										 "WorkingDirectory":"/ziplinee-work",
 										 "Commands":null,
 										 "RunCommandsInForeground":false,
 										 "When":"status == 'succeeded' || status == 'failed'",
@@ -1208,7 +1208,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 								 "Name":"git-clone",
 								 "ContainerImage":"extensions/git-clone:stable",
 								 "Shell":"/bin/sh",
-								 "WorkingDirectory":"/estafette-work",
+								 "WorkingDirectory":"/ziplinee-work",
 								 "Commands":null,
 								 "RunCommandsInForeground":false,
 								 "When":"status == 'succeeded'",
@@ -1223,7 +1223,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 								 "Name":"set-pending-build-status",
 								 "ContainerImage":"extensions/bitbucket-status:stable",
 								 "Shell":"/bin/sh",
-								 "WorkingDirectory":"/estafette-work",
+								 "WorkingDirectory":"/ziplinee-work",
 								 "Commands":null,
 								 "RunCommandsInForeground":false,
 								 "When":"status == 'succeeded'",
@@ -1240,7 +1240,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 								 "Name":"envvars",
 								 "ContainerImage":"extensions/envvars:stable",
 								 "Shell":"/bin/sh",
-								 "WorkingDirectory":"/estafette-work",
+								 "WorkingDirectory":"/ziplinee-work",
 								 "Commands":null,
 								 "RunCommandsInForeground":false,
 								 "When":"status == 'succeeded'",
@@ -1273,7 +1273,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 								 "Name":"set-build-status",
 								 "ContainerImage":"extensions/bitbucket-status:stable",
 								 "Shell":"/bin/sh",
-								 "WorkingDirectory":"/estafette-work",
+								 "WorkingDirectory":"/ziplinee-work",
 								 "Commands":null,
 								 "RunCommandsInForeground":false,
 								 "When":"status == 'succeeded' || status == 'failed'",
@@ -1301,9 +1301,9 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 				 }
 			],
 			"ciServer":{
-				 "baseUrl":"https://ci.estafette.io/",
-				 "builderEventsUrl":"https://ci.estafette.io/api/commands",
-				 "postLogsUrl":"https://ci.estafette.io/api/pipelines/bitbucket.org/xivart/edge/builds/663703472164241425/logs",
+				 "baseUrl":"https://ci.ziplinee.io/",
+				 "builderEventsUrl":"https://ci.ziplinee.io/api/commands",
+				 "postLogsUrl":"https://ci.ziplinee.io/api/pipelines/bitbucket.org/xivart/edge/builds/663703472164241425/logs",
 				 "jwt":"***"
 			},
 			"build":{
@@ -1332,7 +1332,7 @@ func TestUnmarshalBuilderConfig(t *testing.T) {
 						"name":"bitbucket-api-token",
 						"type":"bitbucket-api-token",
 						"additionalProperties":{
-							 "token":"estafette.secret(***)"
+							 "token":"ziplinee.secret(***)"
 						}
 				 }
 			],
@@ -1377,7 +1377,7 @@ func getBuilderConfig() BuilderConfig {
 		JobType:  JobTypeBot,
 		Git:      &GitConfig{},
 		Version:  &VersionConfig{},
-		Manifest: &manifest.EstafetteManifest{},
+		Manifest: &manifest.ZiplineeManifest{},
 		Build:    &Build{},
 		Release:  &Release{},
 		Bot:      &Bot{},

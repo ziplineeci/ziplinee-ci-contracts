@@ -13,8 +13,8 @@
   },
   "git": {
     "repoSource": "github.com",
-    "repoOwner": "estafette",
-    "repoName": "estafette-ci-contracts",
+    "repoOwner": "ziplineeci",
+    "repoName": "ziplinee-ci-contracts",
     "repoBranch": "master",
     "repoRevision": "3adf11c158811dbf0b94ca5bdbbdae79fffe7852"
   },
@@ -36,33 +36,33 @@
       }
     },
     {
-      "name": "container-registry-estafette",
+      "name": "container-registry-ziplinee",
       "type": "container-registry",
       "additionalProperties": {
-        "repository": "estafette",
+        "repository": "ziplinee",
         "username": "username",
         "password": "secret"
       }
     },
     {
-      "name": "gke-estafette-production",
+      "name": "gke-ziplinee-production",
       "type": "kubernetes-engine",
       "additionalProperties": {
-        "project": "estafette-production",
+        "project": "ziplinee-production",
         "region": "europe-west2",
         "cluster": "production-europe-west2",
-        "defaultNamespace": "estafette",
+        "defaultNamespace": "ziplinee",
         "serviceAccountKeyfile": "{}"
       }
     },
     {
-      "name": "gke-estafette-development",
+      "name": "gke-ziplinee-development",
       "type": "kubernetes-engine",
       "additionalProperties": {
-        "project": "estafette-development",
+        "project": "ziplinee-development",
         "region": "europe-west2",
         "cluster": "development-europe-west2",
-        "defaultNamespace": "estafette",
+        "defaultNamespace": "ziplinee",
         "serviceAccountKeyfile": "{}"
       }
     }

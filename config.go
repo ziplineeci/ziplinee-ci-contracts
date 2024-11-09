@@ -35,16 +35,16 @@ type BuilderConfig struct {
 	Git     *GitConfig     `yaml:"git,omitempty" json:"git,omitempty"`
 	Version *VersionConfig `yaml:"version,omitempty" json:"version,omitempty"`
 
-	Track               *string                                `yaml:"track,omitempty" json:"track,omitempty"`
-	DockerConfig        *DockerConfig                          `yaml:"dockerConfig,omitempty" json:"dockerConfig,omitempty"`
-	Manifest            *manifest.EstafetteManifest            `yaml:"manifest,omitempty" json:"manifest,omitempty"`
-	ManifestPreferences *manifest.EstafetteManifestPreferences `yaml:"manifestPreferences,omitempty" json:"manifestPreferences,omitempty"`
-	JobName             *string                                `yaml:"jobName,omitempty" json:"jobName,omitempty"`
-	Events              []manifest.EstafetteEvent              `yaml:"triggerEvents,omitempty" json:"triggerEvents,omitempty"`
-	CIServer            *CIServerConfig                        `yaml:"ciServer,omitempty" json:"ciServer,omitempty"`
-	Stages              []*manifest.EstafetteStage             `yaml:"stages,omitempty" json:"stages,omitempty"`
-	Credentials         []*CredentialConfig                    `yaml:"credentials,omitempty" json:"credentials,omitempty"`
-	TrustedImages       []*TrustedImageConfig                  `yaml:"trustedImages,omitempty" json:"trustedImages,omitempty"`
+	Track               *string                               `yaml:"track,omitempty" json:"track,omitempty"`
+	DockerConfig        *DockerConfig                         `yaml:"dockerConfig,omitempty" json:"dockerConfig,omitempty"`
+	Manifest            *manifest.ZiplineeManifest            `yaml:"manifest,omitempty" json:"manifest,omitempty"`
+	ManifestPreferences *manifest.ZiplineeManifestPreferences `yaml:"manifestPreferences,omitempty" json:"manifestPreferences,omitempty"`
+	JobName             *string                               `yaml:"jobName,omitempty" json:"jobName,omitempty"`
+	Events              []manifest.ZiplineeEvent              `yaml:"triggerEvents,omitempty" json:"triggerEvents,omitempty"`
+	CIServer            *CIServerConfig                       `yaml:"ciServer,omitempty" json:"ciServer,omitempty"`
+	Stages              []*manifest.ZiplineeStage             `yaml:"stages,omitempty" json:"stages,omitempty"`
+	Credentials         []*CredentialConfig                   `yaml:"credentials,omitempty" json:"credentials,omitempty"`
+	TrustedImages       []*TrustedImageConfig                 `yaml:"trustedImages,omitempty" json:"trustedImages,omitempty"`
 }
 
 func (bc *BuilderConfig) Validate() (err error) {
@@ -88,7 +88,7 @@ type CredentialConfig struct {
 	AdditionalProperties map[string]interface{} `yaml:",inline" json:"additionalProperties,omitempty"`
 }
 
-// UnmarshalYAML customizes unmarshalling an EstafetteStage
+// UnmarshalYAML customizes unmarshalling an ZiplineeStage
 func (cc *CredentialConfig) UnmarshalYAML(unmarshal func(interface{}) error) (err error) {
 
 	var aux struct {
@@ -181,7 +181,7 @@ const (
 	DockerRunTypeDoD DockerRunType = "dod"
 )
 
-// DockerConfig has configuration to configure docker in estafette-ci-builder
+// DockerConfig has configuration to configure docker in ziplinee-ci-builder
 type DockerConfig struct {
 	RunType        DockerRunType         `yaml:"runType,omitempty" json:"runType,omitempty"`
 	MTU            int                   `yaml:"mtu,omitempty" json:"mtu,omitempty"`
@@ -384,7 +384,7 @@ func GetTrustedImage(trustedImages []*TrustedImageConfig, imagePath string) *Tru
 }
 
 // FilterTrustedImages returns only trusted images used in the stages
-func FilterTrustedImages(trustedImages []*TrustedImageConfig, stages []*manifest.EstafetteStage, fullRepositoryPath string) []*TrustedImageConfig {
+func FilterTrustedImages(trustedImages []*TrustedImageConfig, stages []*manifest.ZiplineeStage, fullRepositoryPath string) []*TrustedImageConfig {
 
 	filteredImages := []*TrustedImageConfig{}
 

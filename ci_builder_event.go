@@ -12,7 +12,7 @@ const (
 	BuildEventTypeClean        BuildEventType = "clean"
 )
 
-type EstafetteCiBuilderEvent struct {
+type ZiplineeCiBuilderEvent struct {
 	BuildEventType BuildEventType `json:"buildEventType,omitempty"`
 	JobType        JobType        `json:"jobType,omitempty"`
 	JobName        string         `json:"job_name"`
@@ -24,7 +24,7 @@ type EstafetteCiBuilderEvent struct {
 	Git     *GitConfig `json:"git,omitempty"`
 }
 
-func (bc *EstafetteCiBuilderEvent) Validate() (err error) {
+func (bc *ZiplineeCiBuilderEvent) Validate() (err error) {
 
 	if bc.Git == nil {
 		return errors.New("git needs to be set")
@@ -48,7 +48,7 @@ func (bc *EstafetteCiBuilderEvent) Validate() (err error) {
 	return nil
 }
 
-func (bc *EstafetteCiBuilderEvent) GetStatus() Status {
+func (bc *ZiplineeCiBuilderEvent) GetStatus() Status {
 	switch bc.JobType {
 	case JobTypeBuild:
 		if bc.Build != nil {
@@ -67,7 +67,7 @@ func (bc *EstafetteCiBuilderEvent) GetStatus() Status {
 	return StatusUnknown
 }
 
-func (bc *EstafetteCiBuilderEvent) SetStatus(status Status) {
+func (bc *ZiplineeCiBuilderEvent) SetStatus(status Status) {
 	switch bc.JobType {
 	case JobTypeBuild:
 		if bc.Build != nil {

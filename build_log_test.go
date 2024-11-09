@@ -13,8 +13,8 @@ func TestBuildLog(t *testing.T) {
 		buildLog := BuildLog{
 			ID:           "5",
 			RepoSource:   "github.com",
-			RepoOwner:    "estafette",
-			RepoName:     "estafette-ci-api",
+			RepoOwner:    "ziplineeci",
+			RepoName:     "ziplinee-ci-api",
 			RepoBranch:   "master",
 			RepoRevision: "as23456",
 			Steps: []*BuildLogStep{
@@ -33,7 +33,7 @@ func TestBuildLog(t *testing.T) {
 						BuildLogLine{
 							Timestamp:  time.Date(2018, 4, 17, 8, 3, 0, 0, time.UTC),
 							StreamType: "stdout",
-							Text: "ok  	github.com/estafette/estafette-ci-contracts	0.017s",
+							Text:       "ok  	github.com/ziplineeci/ziplinee-ci-contracts	0.017s",
 						},
 					},
 					ExitCode: 0,
@@ -45,7 +45,7 @@ func TestBuildLog(t *testing.T) {
 		// act
 		bytes, err := json.Marshal(&buildLog)
 		assert.Nil(t, err)
-		assert.Equal(t, "{\"id\":\"5\",\"repoSource\":\"github.com\",\"repoOwner\":\"estafette\",\"repoName\":\"estafette-ci-api\",\"repoBranch\":\"master\",\"repoRevision\":\"as23456\",\"buildID\":\"\",\"steps\":[{\"step\":\"init\",\"image\":{\"name\":\"golang\",\"tag\":\"1.10.2-alpine3.7\",\"isPulled\":false,\"imageSize\":135000,\"pullDuration\":2000000000},\"duration\":91000000000,\"logLines\":[{\"timestamp\":\"2018-04-17T08:03:00Z\",\"streamType\":\"stdout\",\"text\":\"ok  \\tgithub.com/estafette/estafette-ci-contracts\\t0.017s\"}],\"exitCode\":0,\"status\":\"SUCCEEDED\"}],\"insertedAt\":\"2018-04-17T08:03:00Z\"}", string(bytes))
+		assert.Equal(t, "{\"id\":\"5\",\"repoSource\":\"github.com\",\"repoOwner\":\"ziplineeci\",\"repoName\":\"ziplinee-ci-api\",\"repoBranch\":\"master\",\"repoRevision\":\"as23456\",\"buildID\":\"\",\"steps\":[{\"step\":\"init\",\"image\":{\"name\":\"golang\",\"tag\":\"1.10.2-alpine3.7\",\"isPulled\":false,\"imageSize\":135000,\"pullDuration\":2000000000},\"duration\":91000000000,\"logLines\":[{\"timestamp\":\"2018-04-17T08:03:00Z\",\"streamType\":\"stdout\",\"text\":\"ok  \\tgithub.com/ziplineeci/ziplinee-ci-contracts\\t0.017s\"}],\"exitCode\":0,\"status\":\"SUCCEEDED\"}],\"insertedAt\":\"2018-04-17T08:03:00Z\"}", string(bytes))
 	})
 }
 

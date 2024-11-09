@@ -2,7 +2,7 @@ package contracts
 
 import "time"
 
-// Client represents a client application registered with Estafette
+// Client represents a client application registered with Ziplinee
 type Client struct {
 	ID            string          `json:"id,omitempty"`
 	Active        bool            `json:"active,omitempty"`
