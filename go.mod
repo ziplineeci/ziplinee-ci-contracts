@@ -31,7 +31,7 @@ require (
 	github.com/rs/zerolog v1.33.0 // indirect
 	github.com/uber/jaeger-client-go v2.30.0+incompatible // indirect
 	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
-	github.com/ziplineeci/ziplinee-foundation v0.0.1 // indirect
+	github.com/ziplineeci/ziplinee-foundation v0.0.2 // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	golang.org/x/sys v0.22.0 // indirect
 	google.golang.org/protobuf v1.34.2 // indirect
